@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+body {
+  background-color: #F2F3F4;
+  font-family: 'Inter', sans-serif;
+}
+
+.info-bar {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e4e6e8), to(#d6dadd));
+  background-image: linear-gradient(180deg, #e4e6e8, #d6dadd);
+  -webkit-box-shadow: 0 2px 15px 5px #bbc0c5;
+          box-shadow: 0 2px 15px 5px #bbc0c5;
+}
+
+.info-bar h6, .info-bar a {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0A646B;
+  margin-top: .2rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.info-bar a:hover {
+  color: #13bbc8;
+}
+
+.center-x-y {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.form-login {
+  width: 50%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6C3483), to(#4e265e));
+  background-image: linear-gradient(180deg, #6C3483, #4e265e);
+  padding: 2rem;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 20px 5px #bbc0c5;
+          box-shadow: 0 0 20px 5px #bbc0c5;
+}
+
+.form-login hr {
+  background-color: #F1948A;
+}
+
+.form-login label, .form-login h5 {
+  color: #F2F3F4;
+}
+
+.card-dashboard {
+  display: block;
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#df3535), to(#C21F1F));
+  background-image: linear-gradient(180deg, #df3535, #C21F1F);
+  padding: 8rem 0;
+  text-align: center;
+  border-radius: 5px;
+  color: #F2F3F4;
+  text-decoration: none;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.card-dashboard:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  color: #F2F3F4;
+  text-decoration: none;
+}
+
+.card-dashboard h4 {
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+
+.side-menu {
+  position: relative;
+  height: 92vh;
+  background-color: #1C2833;
+  color: #F2F3F4;
+}
+
+.side-menu ul {
+  list-style: none;
+  -webkit-padding-start: .5rem;
+          padding-inline-start: .5rem;
+  -webkit-padding-end: .5rem;
+          padding-inline-end: .5rem;
+}
+
+.side-menu ul li {
+  font-size: .9em;
+  padding: .3rem 0;
+}
+
+.side-menu ul li a {
+  display: block;
+  padding: .4rem .5rem;
+  text-decoration: none;
+  color: #F2F3F4;
+  border-radius: 3px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.side-menu ul li a:hover {
+  background-color: #F1948A;
+  color: #1C2833;
+}
+
+.side-menu .button-back {
+  width: 90%;
+  position: absolute;
+  bottom: 0;
+}
+
+.form-search {
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+.form-search button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #6C3483;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.form-search button:hover {
+  color: #3f1e4c;
+}
+
+.table-consult {
+  background-color: #e4e6e8;
+  -webkit-box-shadow: 0 0 10px 5px #bbc0c5;
+          box-shadow: 0 0 10px 5px #bbc0c5;
+}
+
+.table-consult th, .table-consult td {
+  padding: .5rem 1rem;
+}
+
+.table-consult .edit, .table-consult .delete {
+  width: 8%;
+}
+
+.table-consult .edit i, .table-consult .delete i {
+  cursor: pointer;
+}
+
+.toast-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 2rem;
+  opacity: 0;
+}
+
+.toast-wrapper .toast {
+  -webkit-box-shadow: 0 0 10px 3px #c9cdd1;
+          box-shadow: 0 0 10px 3px #c9cdd1;
+  border-radius: 5px;
+}
+
+.toast-wrapper .toast .toast-header {
+  color: #F2F3F4;
+  padding: .3rem .7rem;
+  border-radius: 5px 5px 0 0;
+}
+
+.toast-wrapper .toast .toast-body {
+  background-color: #F2F3F4;
+  padding: .3rem .7rem;
+}
+
+.card #product {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(../assets/imgs/product.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assets/imgs/product.png);
+  background-position: center top;
+  background-size: 70% auto;
+}
+
+.card #employee {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(../assets/imgs/employee.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assets/imgs/employee.jpg);
+  background-position: center top;
+  background-size: 70% auto;
+}
+
+.card #coach {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(../assets/imgs/coach.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assets/imgs/coach.jpg);
+  background-position: center top;
+  background-size: 70% auto;
+}
+
+.card .div-img {
+  height: 300px;
+  color: #F2F3F4;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.card .div-img .text-card {
+  width: 75%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+/*# sourceMappingURL=style.css.map */

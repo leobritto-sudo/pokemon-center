@@ -1,0 +1,140 @@
+<div class="container py-4">
+    <header>
+        <h3 class="font-weight-bold text-dark"><i class="fas fa-th-large pr-1"></i> CONSULTAR PRODUTO</h3>
+        <a href="/product-create" class="btn btn-success btn-sm font-weight-bold mt-3">
+            <i class="fas fa-plus"></i> NOVO REGISTRO
+        </a>
+    </header>
+
+    <form class="form-inline mt-5 form-search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+        <button class="btn-search" type="submit">
+            <i class="fas fa-search fa-lg"></i>
+        </button>
+    </form>
+
+    <div class="text-right">
+        <small class="text-secondary">Há <b id="count_list"><?= count($this->view->prod_list) ?></b> registro(s)</small>
+    </div>
+
+    <table class="table table-sm table-consult mt-1">
+        <thead>
+            <tr class="bg-danger">
+                <th class="text-light">Nome</th>
+                <th class="text-light text-center">Preço</th>
+                <th class="text-light text-center">Estoque</th>
+                <th class="text-light text-center">Categoria</th>
+                <th class="text-light"></th>
+                <th class="text-light"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (count($this->view->prod_list) >= 1) : ?>
+                <?php foreach ($this->view->prod_list as $prod) : ?>
+                    <?php
+
+                    echo '<div class="modal fade" id="editModal' . $prod["id_prod"] . '" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editModalLabel">Editar produto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form id="form_' . $prod["id_prod"] . '" action="/edit-product" method="POST">
+                                        <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="nome' . $prod["id_prod"] . '" class="col-form-label">Nome</label>
+                                                    <input type="text" class="form-control" id="nome' . $prod["id_prod"] . '" name="nome" value="' . $prod["nome_prod"] . '">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="preco' . $prod["id_prod"] . '" class="col-form-label">Preço</label>
+                                                    <input type="text" class="form-control" id="preco' . $prod["id_prod"] . '" name="preco" value="' . $prod["preco"] . '">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="estoque' . $prod["id_prod"] . '" class="col-form-label">Estoque</label>
+                                                    <input type="text" class="form-control" id="estoque' . $prod["id_prod"] . '" name="estoque" value="' . $prod["estoque"] . '">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="categ' . $prod["id_prod"] . '" class="col-form-label">Categoria</label>
+                                                    <select class="form-control" id="categ' . $prod["id_prod"] . '" name="categ">';
+                                                        foreach($this->view->category_list as $categ) {
+                                                            $selected = "";
+                                                            if($categ['id_categ'] == $prod['id_categ']) {
+                                                                $selected = "selected";
+                                                            }
+                                                            echo "<option value='{$categ['id_categ']}' {$selected}>{$categ['nome']}</option>";
+                                                        }
+                                                    echo '</select>
+                                                </div>
+                                                <input type="hidden" name="id" value="' . $prod["id_prod"] . '">
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" data-dismiss="modal" class="btn btn-primary" data-action="edit" data-id="' . $prod["id_prod"] . '">Gravar</button>
+                                            <img id="ajax_load" src="/assets/imgs/load.gif" alt="Load gif" width="45" class="d-none">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>';
+
+                    echo '<div class="modal fade" id="deleteModal' . $prod["id_prod"] . '" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitle">Tem certeza?</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Deseja realmente excluir este registro?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-action="delete" data-id="' . $prod["id_prod"] . '">Excluir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+
+
+                    ?>
+                    <tr id="line_<?= $prod['id_prod'] ?>">
+                        <td><?= $prod['nome_prod'] ?></td>
+                        <td class="text-center">$<?= $prod['preco'] ?></td>
+                        <td class="text-center"><?= $prod['estoque'] ?></td>
+                        <td class="text-center"><?= $prod['nome_categ'] ?></td>
+                        <td class="text-center text-info edit">
+                            <i class="fas fa-edit fa-lg" data-toggle="modal" data-target="#editModal<?= $prod['id_prod'] ?>" data-id="<?= $prod["id_prod"] ?>"></i>
+                        </td>
+                        <td class="text-center text-danger delete">
+                            <i class="fas fa-trash fa-lg" data-toggle="modal" data-target="#deleteModal<?= $prod['id_prod'] ?>" data-id="<?= $prod["id_prod"] ?>"></i>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <tr class="text-danger">
+                    <td>Nenhum registro encontrado</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+
+    <div class="toast-wrapper d-none">
+        <div class="toast" role="alert">
+            <div class="toast-header bg-success">
+                <strong class="mr-auto">Sucesso</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                O registro foi excluído com sucesso
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div id="category" class="container py-4">
+    <header>
+        <h3 class="font-weight-bold text-dark"><i class="fas fa-certificate pr-1"></i> HISTÓRICO DE VENDAS</h3>
+    </header>
+
+    <table class="table table-sm table-consult mt-5">
+        <thead>
+            <tr class="bg-danger">
+                <th class="text-light">Total</th>
+                <th class="text-light">Data</th>
+                <th class="text-light">Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($this->view->list_sale as $sale) : ?>
+                <tr>
+                    <td>$<?= $sale['total'] ?></td>
+                    <td><?= date_format(date_create($sale['data_venda']), "d/m/Y H:m:s") ?></td>
+                    <td><?= $sale['quantidade'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

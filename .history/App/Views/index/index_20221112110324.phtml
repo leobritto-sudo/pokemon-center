@@ -1,0 +1,32 @@
+<div class="w-50 mx-auto mt-4 text-center">
+    <img src="/assets/imgs/center-pokemon-logo.png" alt="Logo Centro Pokémon" class="img-fluid">
+</div>
+
+<div class="form-login center-x-y">
+    <form action="/auth" method="POST">
+        <div class="d-flex justify-content-between mb-3">
+            <hr class="flex-grow-1">
+            <h5 class="px-3 mt-1 font-weight-bold">BEM VINDO</h5>
+            <hr class="flex-grow-1">
+        </div>
+
+        <div class="form-group">
+            <label for="">Usuário: </label>
+            <input type="text" name="login" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Senha: </label>
+            <input type="password" name="password" class="form-control">
+        </div>
+
+        <?php if ($this->view->login == "erro") : ?>
+        <div class="invalid-feedback d-block text-center font-weight-bold">
+            Usuário ou senha incorretos
+        </div>
+        <?php endif; ?>
+
+        <div class="form-group mt-4">
+            <input type="submit" value="Entrar" class="btn btn-danger btn-block">
+        </div>
+    </form>
+</div>

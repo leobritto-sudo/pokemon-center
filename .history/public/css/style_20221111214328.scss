@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import "variables.scss";
+
+body {
+    background-color: $secondary;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-login {
+    background-color: $primary;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

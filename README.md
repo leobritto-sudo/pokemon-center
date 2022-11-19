@@ -7,6 +7,7 @@ Projeto que tem como intuito simular o sistema de um Centro Pokémon. Para isso 
 * PHP
 * JQuery / Ajax
 * Sass
+* MySQL
 
 ## Autor do projeto
 Este projeto foi realizado e desenvolvido por Leonardo Alves

@@ -2,6 +2,7 @@
 @import "variables.scss";
 
 body {
+    overflow-x: hidden;
     background-color: $white;
     font-family: 'Inter', sans-serif;
 }
@@ -166,19 +167,19 @@ body {
 }
 
 .card {
-    #product {
+    #product-card {
         background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(../assets/imgs/product.png);
         background-position: center top;
         background-size: 70% auto;
     }
 
-    #employee {
+    #employee-card {
         background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(../assets/imgs/employee.jpg);
         background-position: center top;
         background-size: 70% auto;
     }
 
-    #coach {
+    #coach-card {
         background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(../assets/imgs/coach.jpg);
         background-position: center top;
         background-size: 70% auto;

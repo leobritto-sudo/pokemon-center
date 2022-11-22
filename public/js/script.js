@@ -33,7 +33,7 @@ $(document).ready(function () {
         })
     })
 
-    $('#category .modal button[data-action="edit"]').on('click', function (e) {
+    $('#category-container .modal button[data-action="edit"]').on('click', function (e) {
         e.preventDefault();
 
         var id = $(this).attr('data-id')
@@ -59,7 +59,7 @@ $(document).ready(function () {
         })
     })
 
-    $('#category .modal button[data-action="delete"]').on('click', function (e) {
+    $('#category-container .modal button[data-action="delete"]').on('click', function (e) {
         e.preventDefault();
 
         var id = $(this).attr('data-id')
@@ -106,7 +106,7 @@ $(document).ready(function () {
         })
     })
 
-    $('#product .modal button[data-action="edit"]').on('click', function (e) {
+    $('#product-container .modal button[data-action="edit"]').on('click', function (e) {
         e.preventDefault();
 
         var id = $(this).attr('data-id')
@@ -135,7 +135,7 @@ $(document).ready(function () {
         })
     })
 
-    $('#product .modal button[data-action="delete"]').on('click', function (e) {
+    $('#product-container .modal button[data-action="delete"]').on('click', function (e) {
         e.preventDefault();
 
         var id = $(this).attr('data-id')
@@ -182,7 +182,7 @@ $(document).ready(function () {
         })
     })
 
-    $('#employee .modal button[data-action="edit"]').on('click', function (e) {
+    $('#employee-container .modal button[data-action="edit"]').on('click', function (e) {
         e.preventDefault();
 
         var id = $(this).attr('data-id')
@@ -210,7 +210,7 @@ $(document).ready(function () {
         })
     })
 
-    $('#employee .modal button[data-action="delete"]').on('click', function (e) {
+    $('#employee-container .modal button[data-action="delete"]').on('click', function (e) {
         e.preventDefault();
 
         var id = $(this).attr('data-id')
@@ -257,7 +257,7 @@ $(document).ready(function () {
         })
     })
 
-    $('#coach .modal button[data-action="edit"]').on('click', function (e) {
+    $('#coach-container .modal button[data-action="edit"]').on('click', function (e) {
         e.preventDefault();
 
         var id = $(this).attr('data-id')
@@ -298,7 +298,7 @@ $(document).ready(function () {
         })
     })
 
-    $('#coach .modal button[data-action="delete"]').on('click', function (e) {
+    $('#coach-container .modal button[data-action="delete"]').on('click', function (e) {
         e.preventDefault();
 
         var id = $(this).attr('data-id')
